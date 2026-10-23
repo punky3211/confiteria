@@ -1,0 +1,312 @@
+/* ==========================================================================
+   Confitería — Hoja de estilos compartida por todo el equipo
+   Páginas: index.html · servicios.html · equipo.html
+   ========================================================================== */
+
+/* ---------- Variables de diseño ---------- */
+:root {
+  --rosa: #d6336c;
+  --rosa-suave: #f8d7e3;
+  --rosa-claro: #fff5f8;
+  --crema: #fffaf4;
+  --tinta: #2f2a2e;
+  --gris: #6b6371;
+  --borde: #f0e2e8;
+  --blanco: #ffffff;
+
+  --radio: 14px;
+  --sombra: 0 6px 20px rgba(214, 51, 108, 0.10);
+  --sombra-hover: 0 12px 28px rgba(214, 51, 108, 0.20);
+
+  --fuente: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ---------- Reset básico ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fuente);
+  background: var(--crema);
+  color: var(--tinta);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---------- Barra de navegación ---------- */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px 32px;
+  background: var(--blanco);
+  border-bottom: 1px solid var(--borde);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--rosa);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 999px;
+  color: var(--gris);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-links a:hover {
+  background: var(--rosa-claro);
+  color: var(--rosa);
+}
+
+.nav-links a.activo {
+  background: var(--rosa);
+  color: var(--blanco);
+}
+
+/* ---------- Encabezado de sección ---------- */
+.hero {
+  text-align: center;
+  padding: 64px 24px 48px;
+  background: linear-gradient(180deg, var(--rosa-claro) 0%, var(--crema) 100%);
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+.hero h1 span {
+  color: var(--rosa);
+}
+
+.hero p {
+  max-width: 640px;
+  margin: 0 auto;
+  color: var(--gris);
+  font-size: 1.05rem;
+}
+
+/* ---------- Contenedor y títulos ---------- */
+.contenedor {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.titulo-seccion {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.titulo-seccion h2 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.titulo-seccion p {
+  color: var(--gris);
+}
+
+.linea-rosa {
+  width: 64px;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--rosa);
+  margin: 14px auto 0;
+}
+
+/* ---------- Rejilla y tarjetas ---------- */
+.rejilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.tarjeta {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 28px 24px;
+  box-shadow: var(--sombra);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--sombra-hover);
+}
+
+.tarjeta .icono {
+  font-size: 2.2rem;
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--rosa-claro);
+  margin-bottom: 18px;
+}
+
+.tarjeta h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.tarjeta p {
+  color: var(--gris);
+  font-size: 0.96rem;
+}
+
+.tarjeta ul {
+  margin-top: 14px;
+  padding-left: 20px;
+  color: var(--gris);
+  font-size: 0.93rem;
+}
+
+.tarjeta ul li {
+  margin-bottom: 6px;
+}
+
+/* ---------- Perfiles (sección equipo) ---------- */
+.tarjeta.perfil {
+  text-align: center;
+}
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+  background: var(--rosa-suave);
+}
+
+.cargo {
+  display: inline-block;
+  margin: 6px 0 12px;
+  padding: 3px 12px;
+  border-radius: 999px;
+  background: var(--rosa-claro);
+  color: var(--rosa);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+/* ---------- Botones ---------- */
+.boton {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 11px 24px;
+  border: none;
+  border-radius: 999px;
+  background: var(--rosa);
+  color: var(--blanco);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.boton:hover {
+  background: #b02a55;
+  transform: scale(1.03);
+}
+
+.boton.secundario {
+  background: transparent;
+  color: var(--rosa);
+  border: 2px solid var(--rosa);
+}
+
+/* ---------- Franja destacada ---------- */
+.franja {
+  background: var(--rosa);
+  color: var(--blanco);
+  text-align: center;
+  padding: 44px 24px;
+}
+
+.franja h2 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.franja p {
+  opacity: 0.92;
+  max-width: 620px;
+  margin: 0 auto 20px;
+}
+
+.franja .boton {
+  background: var(--blanco);
+  color: var(--rosa);
+}
+
+/* ---------- Pie de página ---------- */
+.pie {
+  background: var(--tinta);
+  color: #d8d2d6;
+  text-align: center;
+  padding: 28px 24px;
+  font-size: 0.9rem;
+}
+
+.pie a {
+  color: var(--rosa-suave);
+  text-decoration: none;
+}
+
+/* ---------- Diseño adaptable ---------- */
+@media (max-width: 640px) {
+  .navbar {
+    justify-content: center;
+    padding: 14px 18px;
+  }
+
+  .hero {
+    padding: 44px 18px 32px;
+  }
+
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .contenedor {
+    padding: 32px 18px;
+  }
+}
