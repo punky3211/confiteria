@@ -1,312 +1,334 @@
-/* ==========================================================================
-   Confitería — Hoja de estilos compartida por todo el equipo
-   Páginas: index.html · servicios.html · equipo.html
-   ========================================================================== */
-
-/* ---------- Variables de diseño ---------- */
+/* --- Variables y Reset --- */
 :root {
-  --rosa: #d6336c;
-  --rosa-suave: #f8d7e3;
-  --rosa-claro: #fff5f8;
-  --crema: #fffaf4;
-  --tinta: #2f2a2e;
-  --gris: #6b6371;
-  --borde: #f0e2e8;
-  --blanco: #ffffff;
-
-  --radio: 14px;
-  --sombra: 0 6px 20px rgba(214, 51, 108, 0.10);
-  --sombra-hover: 0 12px 28px rgba(214, 51, 108, 0.20);
-
-  --fuente: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --primary-color: #d81b60;
+  --secondary-color: #f8bbd0;
+  --accent-color: #8e24aa;
+  --bg-color: #fff8f9;
+  --text-color: #333333;
+  --card-bg: #ffffff;
 }
 
-/* ---------- Reset básico ---------- */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  font-family: var(--fuente);
-  background: var(--crema);
-  color: var(--tinta);
-  line-height: 1.6;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-/* ---------- Barra de navegación ---------- */
-.navbar {
+  background-color: var(--bg-color);
+  color: var(--text-color);
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* --- Navegación --- */
+header {
+  background-color: var(--primary-color);
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+nav {
+  display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding: 16px 32px;
-  background: var(--blanco);
-  border-bottom: 1px solid var(--borde);
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .logo {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: var(--rosa);
-  text-decoration: none;
-  letter-spacing: 0.5px;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+  gap: 1.5rem;
 }
 
 .nav-links a {
-  display: inline-block;
-  padding: 8px 16px;
-  border-radius: 999px;
-  color: var(--gris);
+  color: white;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: background 0.2s, color 0.2s;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
-.nav-links a:hover {
-  background: var(--rosa-claro);
-  color: var(--rosa);
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--secondary-color);
 }
 
-.nav-links a.activo {
-  background: var(--rosa);
-  color: var(--blanco);
+/* --- Contenido Principal --- */
+main {
+  flex: 1;
+  max-width: 1100px;
+  width: 90%;
+  margin: 2rem auto;
 }
 
-/* ---------- Encabezado de sección ---------- */
 .hero {
   text-align: center;
-  padding: 64px 24px 48px;
-  background: linear-gradient(180deg, var(--rosa-claro) 0%, var(--crema) 100%);
+  padding: 3rem 1rem;
+  background-color: var(--secondary-color);
+  border-radius: 12px;
+  margin-bottom: 2rem;
 }
 
 .hero h1 {
-  font-size: 2.4rem;
-  line-height: 1.2;
-  margin-bottom: 14px;
-}
-
-.hero h1 span {
-  color: var(--rosa);
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .hero p {
-  max-width: 640px;
-  margin: 0 auto;
-  color: var(--gris);
-  font-size: 1.05rem;
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 1.5rem;
 }
 
-/* ---------- Contenedor y títulos ---------- */
-.contenedor {
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 48px 24px;
+/* --- Formularios --- */
+.subscription-form {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.subscription-form input[type="email"] {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 280px;
+}
+
+.btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--accent-color);
+}
+
+/* --- Filtros y Grillas --- */
+.filter-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.btn-filter {
+  background-color: white;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+
+  transition: all 0.3s;
+}
+
+.btn-filter.active,
+.btn-filter:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.card .price {
+  font-weight: bold;
+  color: var(--accent-color);
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* --- Modal --- */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #888;
+}
+
+/* --- Pie de Página --- */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: auto;
+}
+/* ==========================================================================
+   COMPONENTES COMPARTIDOS DEL EQUIPO
+   Añadido por el Estudiante 2 (sección de servicios).
+   Se agrega al final para NO modificar nada de index.html.
+   Usa las mismas variables definidas arriba en :root para que las tres
+   páginas del sitio mantengan la misma identidad visual.
+   ========================================================================== */
+
+/* ---------- Títulos de sección ---------- */
+.seccion {
+  margin-bottom: 3rem;
 }
 
 .titulo-seccion {
   text-align: center;
-  margin-bottom: 36px;
+  color: var(--primary-color);
+  font-size: 1.9rem;
+  margin-bottom: 2rem;
 }
 
-.titulo-seccion h2 {
-  font-size: 1.8rem;
-  margin-bottom: 8px;
-}
-
-.titulo-seccion p {
-  color: var(--gris);
-}
-
-.linea-rosa {
-  width: 64px;
-  height: 4px;
-  border-radius: 4px;
-  background: var(--rosa);
-  margin: 14px auto 0;
-}
-
-/* ---------- Rejilla y tarjetas ---------- */
-.rejilla {
+/* ---------- Tarjetas de servicios ---------- */
+.card .card-icono {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 1rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-}
-
-.tarjeta {
-  background: var(--blanco);
-  border: 1px solid var(--borde);
-  border-radius: var(--radio);
-  padding: 28px 24px;
-  box-shadow: var(--sombra);
-  transition: transform 0.25s, box-shadow 0.25s;
-}
-
-.tarjeta:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--sombra-hover);
-}
-
-.tarjeta .icono {
+  place-items: center;
   font-size: 2.2rem;
-  width: 64px;
-  height: 64px;
-  display: grid;
-  place-items: center;
+  background-color: var(--secondary-color);
   border-radius: 50%;
-  background: var(--rosa-claro);
-  margin-bottom: 18px;
 }
 
-.tarjeta h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+.card p {
+  color: #555;
+  line-height: 1.6;
 }
 
-.tarjeta p {
-  color: var(--gris);
-  font-size: 0.96rem;
+.card-lista {
+  list-style: none;
+  margin-top: 1.2rem;
+  text-align: left;
 }
 
-.tarjeta ul {
-  margin-top: 14px;
-  padding-left: 20px;
-  color: var(--gris);
-  font-size: 0.93rem;
-}
-
-.tarjeta ul li {
-  margin-bottom: 6px;
-}
-
-/* ---------- Perfiles (sección equipo) ---------- */
-.tarjeta.perfil {
-  text-align: center;
-}
-
-.avatar {
-  width: 96px;
-  height: 96px;
-  margin: 0 auto 16px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-size: 2rem;
-  background: var(--rosa-suave);
-}
-
-.cargo {
-  display: inline-block;
-  margin: 6px 0 12px;
-  padding: 3px 12px;
-  border-radius: 999px;
-  background: var(--rosa-claro);
-  color: var(--rosa);
-  font-size: 0.82rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.4px;
-}
-
-/* ---------- Botones ---------- */
-.boton {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 11px 24px;
-  border: none;
-  border-radius: 999px;
-  background: var(--rosa);
-  color: var(--blanco);
-  font-weight: 700;
+.card-lista li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.45rem;
+  color: #555;
   font-size: 0.95rem;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
 }
 
-.boton:hover {
-  background: #b02a55;
-  transform: scale(1.03);
+.card-lista li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: bold;
 }
 
-.boton.secundario {
-  background: transparent;
-  color: var(--rosa);
-  border: 2px solid var(--rosa);
-}
-
-/* ---------- Franja destacada ---------- */
+/* ---------- Franja de contacto ---------- */
 .franja {
-  background: var(--rosa);
-  color: var(--blanco);
   text-align: center;
-  padding: 44px 24px;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 2.5rem 1.5rem;
+  margin-top: 1rem;
 }
 
 .franja h2 {
-  font-size: 1.6rem;
-  margin-bottom: 10px;
+  margin-bottom: 0.5rem;
 }
 
 .franja p {
-  opacity: 0.92;
-  max-width: 620px;
-  margin: 0 auto 20px;
+  margin-bottom: 1.4rem;
 }
 
-.franja .boton {
-  background: var(--blanco);
-  color: var(--rosa);
-}
-
-/* ---------- Pie de página ---------- */
-.pie {
-  background: var(--tinta);
-  color: #d8d2d6;
-  text-align: center;
-  padding: 28px 24px;
-  font-size: 0.9rem;
-}
-
-.pie a {
-  color: var(--rosa-suave);
+.franja .btn {
+  background-color: #ffffff;
+  color: var(--primary-color);
+  display: inline-block;
   text-decoration: none;
 }
 
-/* ---------- Diseño adaptable ---------- */
+.franja .btn:hover {
+  background-color: var(--secondary-color);
+}
+
+/* ---------- Diseño adaptable (móvil) ---------- */
 @media (max-width: 640px) {
-  .navbar {
-    justify-content: center;
-    padding: 14px 18px;
+  header {
+    padding: 1rem;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
   }
 
   .hero {
-    padding: 44px 18px 32px;
+    padding: 2rem 1rem;
   }
 
   .hero h1 {
-    font-size: 1.75rem;
+    font-size: 1.8rem;
   }
 
-  .contenedor {
-    padding: 32px 18px;
+  .franja {
+    padding: 2rem 1rem;
   }
 }
