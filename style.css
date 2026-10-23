@@ -217,3 +217,118 @@ footer {
   padding: 1.5rem;
   margin-top: auto;
 }
+/* ==========================================================================
+   COMPONENTES COMPARTIDOS DEL EQUIPO
+   Añadido por el Estudiante 2 (sección de servicios).
+   Se agrega al final para NO modificar nada de index.html.
+   Usa las mismas variables definidas arriba en :root para que las tres
+   páginas del sitio mantengan la misma identidad visual.
+   ========================================================================== */
+
+/* ---------- Títulos de sección ---------- */
+.seccion {
+  margin-bottom: 3rem;
+}
+
+.titulo-seccion {
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 1.9rem;
+  margin-bottom: 2rem;
+}
+
+/* ---------- Tarjetas de servicios ---------- */
+.card .card-icono {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 1rem;
+  display: grid;
+  place-items: center;
+  font-size: 2.2rem;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+}
+
+.card p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.card-lista {
+  list-style: none;
+  margin-top: 1.2rem;
+  text-align: left;
+}
+
+.card-lista li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.45rem;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.card-lista li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* ---------- Franja de contacto ---------- */
+.franja {
+  text-align: center;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 2.5rem 1.5rem;
+  margin-top: 1rem;
+}
+
+.franja h2 {
+  margin-bottom: 0.5rem;
+}
+
+.franja p {
+  margin-bottom: 1.4rem;
+}
+
+.franja .btn {
+  background-color: #ffffff;
+  color: var(--primary-color);
+  display: inline-block;
+  text-decoration: none;
+}
+
+.franja .btn:hover {
+  background-color: var(--secondary-color);
+}
+
+/* ---------- Diseño adaptable (móvil) ---------- */
+@media (max-width: 640px) {
+  header {
+    padding: 1rem;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .franja {
+    padding: 2rem 1rem;
+  }
+}
